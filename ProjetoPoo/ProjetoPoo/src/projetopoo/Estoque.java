@@ -7,16 +7,28 @@ package projetopoo;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 /**
  *
  * @author rafael.abarbosa1
  */
 public class Estoque extends Produto {
+    Scanner leitor = new Scanner (System.in);
 
     List<Produto> produtos = new ArrayList();
 
-    public boolean inserir(int codProd, String descricao, String nome, double valor, int qtd) {
+    public boolean inserir() {
+        System.out.println("digite o código do produto:");
+        int codProd = leitor.nextInt();
+        System.out.println("digite a descrição:");
+        String descricao = leitor.next();
+        System.out.println("digite o nome:");
+        String nome = leitor.next();
+        System.out.println("digite o valor:");
+        double valor = leitor.nextDouble();
+        System.out.println("digite a quantidade:");
+        int qtd = leitor.nextInt();
         Produto produto = new Produto(codProd, descricao, nome, valor, qtd);
         produtos.add(produto);
 

@@ -1,0 +1,3 @@
+usuario=beltrano
+senha=segredo
+cargo=comum

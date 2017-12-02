@@ -14,17 +14,26 @@ import java.util.List;
  */
 public class Estoque extends Produto {
 
-    public Estoque(String nome, double valor, int qtd) {
-        super(nome, valor, qtd);
+    List<Produto> produtos = new ArrayList();
 
+    public boolean inserir(int codProd, String descricao, String nome, double valor, int qtd) {
+        Produto produto = new Produto(codProd, descricao, nome, valor, qtd);
+        produtos.add(produto);
+
+        return false;
     }
 
-    public List armazenar() {
-        List prodCadastrados = new ArrayList();
-        Produto produto = new Produto(nome, valor, qtd);
+    public boolean remover(int id) {
+        for (Produto prod : produtos) {
+            if (prod.getId() == id) {
+                produtos.remove(id);
+            }
+        }
 
-        prodCadastrados.add(produto);
-        
-        return prodCadastrados;
+        return false;
+    }
+
+    public List<Produto> consultar() {
+        return produtos;
     }
 }

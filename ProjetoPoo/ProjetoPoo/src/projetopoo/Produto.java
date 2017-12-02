@@ -10,9 +10,37 @@ package projetopoo;
  * @author rafael.abarbosa1
  */
 public class Produto {
-    String nome;
+    int codProd, qtd;
+    String nome, descricao;
     double valor;
-    int qtd;
+
+    public Produto(int codProd, String descricao, String nome, double valor, int qtd) {
+        this.codProd = codProd;
+        this.descricao = descricao;
+        this.nome = nome;
+        this.valor = valor;
+        this.qtd = qtd;
+    }
+    
+    public Produto(){
+        
+    }
+
+    public int getId() {
+        return codProd;
+    }
+
+    public void setId(int id) {
+        this.codProd = id;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
 
     public String getNome() {
         return nome;
@@ -38,11 +66,4 @@ public class Produto {
         this.qtd = qtd;
     }
 
-    public Produto(String nome, double valor, int qtd) {
-        this.nome = nome;
-        this.valor = valor;
-        this.qtd = qtd;
-    }
-    
-    
 }

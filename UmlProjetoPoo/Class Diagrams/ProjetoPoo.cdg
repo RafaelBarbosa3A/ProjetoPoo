@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="ProjetoPoo">
+  <ClassDiagramComponents>
+    <Class name="Comum" package="" visibility="public" xPosition="35.0" yPosition="395.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="consulta" returnType="List" visibility="public"/>
+        <Method name="usuarioSenha" returnType="List" visibility="public"/>
+        <Method name="confere" returnType="boolean" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Gerente" package="" visibility="public" xPosition="348.0" yPosition="395.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="consulta" returnType="List" visibility="public"/>
+        <Method name="usuarioSenha" returnType="List" visibility="public"/>
+        <Method name="confere" returnType="boolean" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Usuario" package="" visibility="public" isAbstract="true" xPosition="157.0" yPosition="91.0">
+      <Fields>
+        <Field name="usuario" type="String" visibility="public"/>
+        <Field name="senha" type="String" visibility="public"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="consulta" returnType="List" visibility="public" isAbstract="true"/>
+        <Method name="usuarioSenha" returnType="List" visibility="public" isAbstract="true"/>
+        <Method name="confere" returnType="boolean" visibility="public" isAbstract="true"/>
+      </Methods>
+    </Class>
+    <Class name="Estoque" package="" visibility="public" xPosition="603.0" yPosition="182.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="inserir" returnType="ArrayList" visibility="public"/>
+        <Method name="remover" returnType="boolean" visibility="public"/>
+        <Method name="consultar" returnType="ArrayList" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Produto" package="" visibility="public" xPosition="619.0" yPosition="395.0">
+      <Fields>
+        <Field name="codProd" type="int" visibility="public"/>
+        <Field name="qtd" type="int" visibility="public"/>
+        <Field name="nome" type="String" visibility="public"/>
+        <Field name="descricao" type="String" visibility="public"/>
+        <Field name="valor" type="double" visibility="public"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Interface name="ProjetoPoo" package="" visibility="public" xPosition="379.0" yPosition="24.0">
+      <Methods>
+        <Method name="menu" returnType="void" visibility="public"/>
+      </Methods>
+    </Interface>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Estoque" target="ProjetoPoo"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Usuario" target="ProjetoPoo"/>
+    <IsRelation name="is" source="Gerente" target="Usuario"/>
+    <IsRelation name="is" source="Comum" target="Usuario"/>
+    <HasRelation name="tem um" source="Estoque" target="Produto" type="Default" sourceCardinality="0..1" targetCardinality="1..*" collectionType="ArrayList"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

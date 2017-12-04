@@ -35,12 +35,6 @@ public class Gerente extends Usuario {
     @Override
     public List usuarioSenha() {
         try {
-            /*BufferedReader entrada = new BufferedReader(new InputStreamReader(
-                    System.in));
-            System.out.println("informe o usuario:");
-            String usuario = entrada.readLine();
-            System.out.println("informe a senha:");
-            String senha = entrada.readLine();*/
             
             List usuSenha = new ArrayList();
             Usuario novo = null;

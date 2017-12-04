@@ -6,7 +6,7 @@
 package projetopoo;
 
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Iterator;
 import java.util.Scanner;
 
 /**
@@ -14,11 +14,11 @@ import java.util.Scanner;
  * @author rafael.abarbosa1
  */
 public class Estoque extends Produto {
-    Scanner leitor = new Scanner (System.in);
 
-    List<Produto> produtos = new ArrayList();
+    Scanner leitor = new Scanner(System.in);
+    ArrayList<Produto>produtos;
 
-    public boolean inserir() {
+    public ArrayList inserir() {
         System.out.println("digite o código do produto:");
         int codProd = leitor.nextInt();
         System.out.println("digite a descrição:");
@@ -29,23 +29,37 @@ public class Estoque extends Produto {
         double valor = leitor.nextDouble();
         System.out.println("digite a quantidade:");
         int qtd = leitor.nextInt();
-        Produto produto = new Produto(codProd, descricao, nome, valor, qtd);
-        produtos.add(produto);
+        Produto prod = new Produto(codProd, descricao, nome, valor, qtd);
 
-        return false;
+        ArrayList produtos = new ArrayList();
+        produtos.add(prod);
+
+        return produtos;
     }
 
     public boolean remover(int id) {
-        for (Produto prod : produtos) {
-            if (prod.getId() == id) {
-                produtos.remove(id);
+        ArrayList<Produto> produt = consultar(produtos);
+        for (int i = 0; i < produt.size(); i++) {
+            if (produt.get(i).getId() == id) {
+                produt.remove(produt.get(i).getId());
+                System.out.println("produto excluído com sucesso");
             }
         }
-
-        return false;
+        return true;
     }
 
-    public List<Produto> consultar() {
-        return produtos;
+    public ArrayList consultar(ArrayList<Produto>prod) {
+        
+        if (!prod.isEmpty()) {
+            for(int i = 0; i<prod.size();i++){
+                System.out.print(prod.get(i).getNome() + " / " + prod.get(i).getDescricao() + " / " + 
+                        prod.get(i).getQtd() + " / " + prod.get(i).getValor());
+                System.out.println("");
+            }
+
+        } else {
+            System.out.println("ops, a lista parece estar vazia :(");
+        }
+        return prod;
     }
 }

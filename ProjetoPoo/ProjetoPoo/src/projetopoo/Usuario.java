@@ -5,21 +5,14 @@
  */
 package projetopoo;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
+
 import java.util.List;
-import java.util.Properties;
 
 /**
  *
  * @author rafael.abarbosa1
  */
-public abstract class Usuario extends Estoque {
+public abstract class Usuario{
     
     String usuario;
     String senha;

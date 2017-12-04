@@ -36,12 +36,6 @@ public class Comum extends Usuario {
     @Override
     public List usuarioSenha() {
         try {
-            /*BufferedReader entrada = new BufferedReader(new InputStreamReader(
-                    System.in));
-            System.out.println("informe o usuario:");
-            String usuario = entrada.readLine();
-            System.out.println("informe a senha:");
-            String senha = entrada.readLine();*/
             
             List usuSenha = new ArrayList();
             Usuario novo = null;
@@ -50,14 +44,7 @@ public class Comum extends Usuario {
             
             return usuSenha;
 
-            /*Properties p = new Properties();
-
-            p.load(new FileInputStream("usuarioPoo.txt"));
-            if (confere(usuario, senha,new File("usuarioPoo.txt"))) {
-                System.out.println("bem vindo sr. " + p.getProperty("cargo"));
-            } else {
-                System.out.println("usuario e/ou senha invalida!");
-            }*/
+            
         } catch (Throwable t) {
             t.printStackTrace();
         } finally {
